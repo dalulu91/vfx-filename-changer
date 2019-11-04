@@ -1,5 +1,4 @@
 import os
-from shutil import move
 import sys
 
 # Number of digits in your file type name (dpx is 3, tiff is 4, png is also 3, etc.)
@@ -48,8 +47,6 @@ for filename in os.listdir(dir):
 
     # THIS IS SPARTA
     os.rename(src, dst)
-    # shutil move overwrites, but it also deletes all the files
-    #move(src, dst)
     frame += 1
 
 print "Renaming successful!"
