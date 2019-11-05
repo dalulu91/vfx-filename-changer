@@ -16,21 +16,21 @@ startFrame = 1
 if len(sys.argv) > 1:
     dir = sys.argv[1]
     element = sys.argv[2]
-    shotname = sys.argv[3]
+    shotcode = sys.argv[3]
     shotnumber = sys.argv[4]
     version = sys.argv[5]
 # If there's no arguments, let the user type them in manually
 else:
-    dir = raw_input("Drag the folder into this window: ")
+    dir = raw_input("Image sequence directory: ")
     print "[" + dir + "]"
     element = raw_input("i/o/e: ")
     print "[" + element + "]"
-    shotname = raw_input("Shotname/Codename: ")
-    print "[" + element + "_" + shotname + "]"
+    shotcode = raw_input("Shot code: ")
+    print "[" + element + "_" + shotcode + "]"
     shotnumber = raw_input("Shot number: ")
-    print "[" + element + "_" + shotname + "_" + shotnumber + "]"
+    print "[" + element + "_" + shotcode + "_" + shotnumber + "]"
     version = raw_input("Version number: ")
-    print "[" + element + "_" + shotname + "_" + shotnumber + "_" + version + "]"
+    print "[" + element + "_" + shotcode + "_" + shotnumber + "_" + version + "]"
 
 
 frame = startFrame
@@ -43,11 +43,11 @@ for filename in os.listdir(dir):
 
     # If you wanna specify the filetype yourself, remove the hastag # in the line under:
     #filetype = ".dpx"
-    dst = dir + "/" + element + "_" + shotname + "_" + str(shotnumber) + "_v" + version + "_" + str(frame).zfill(frameDigits) + filetype
+    dst = dir + "/" + element + "_" + shotcode + "_" + str(shotnumber) + "_v" + version + "_" + str(frame).zfill(frameDigits) + filetype
 
     # THIS IS SPARTA
     os.rename(src, dst)
     frame += 1
 
 print "Renaming successful!"
-print "[" + element + "_" + shotname + "_" + shotnumber + "_" + version + "_####" + filetype + "]"
+print "[" + element + "_" + shotcode + "_" + shotnumber + "_" + version + "_####" + filetype + "]"
