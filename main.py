@@ -22,15 +22,15 @@ if len(sys.argv) > 1:
 # If there's no arguments, let the user type them in manually
 else:
     dir = raw_input("Image sequence directory: ")
-    print "[" + dir + "]"
-    element = raw_input("i/o/e: ")
-    print "[" + element + "]"
-    shotcode = raw_input("Shot code: ")
-    print "[" + element + "_" + shotcode + "]"
-    shotnumber = raw_input("Shot number: ")
-    print "[" + element + "_" + shotcode + "_" + shotnumber + "]"
-    version = raw_input("Version number: ")
-    print "[" + element + "_" + shotcode + "_" + shotnumber + "_" + version + "]"
+    print("[" + dir + "]")
+    element = input("i/o/e: ")
+    print("[" + element + "]")
+    shotcode = input("Shot code: ")
+    print("[" + element + "_" + shotcode + "]")
+    shotnumber = input("Shot number: ")
+    print("[" + element + "_" + shotcode + "_" + shotnumber + "]")
+    version = input("Version number: ")
+    print("[" + element + "_" + shotcode + "_" + shotnumber + "_" + version + "]")
 
 
 frame = startFrame
@@ -49,5 +49,5 @@ for filename in os.listdir(dir):
     os.rename(src, dst)
     frame += 1
 
-print "Renaming successful!"
-print "[" + element + "_" + shotcode + "_" + shotnumber + "_" + version + "_####" + filetype + "]"
+print("Renaming successful!")
+print("[" + element + "_" + shotcode + "_" + shotnumber + "_" + version + "_####" + filetype + "]")
